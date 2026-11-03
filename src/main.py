@@ -5,6 +5,29 @@ Module: Main Application
 from student import Student
 
 
+def add_student(students: list, student_id: str, name: str, age: int, grade: str) -> list:
+    """Thêm sinh viên mới vào danh sách.
+
+    Args:
+        students: Danh sách sinh viên hiện tại
+        student_id: Mã sinh viên
+        name: Họ tên
+        age: Tuổi
+        grade: Khóa
+
+    Returns:
+        Danh sách sinh viên đã được cập nhật
+    """
+    for s in students:
+        if s.student_id == student_id:
+            print(f"❌ Mã sinh viên {student_id} đã tồn tại!")
+            return students
+    new_student = Student(student_id, name, age, grade)
+    students.append(new_student)
+    print(f"Đã thêm sinh viên: {new_student}")
+    return students
+
+
 def main():
     print("=" * 50)
     print("STUDENT MANAGER — DevOps Lab 5")
@@ -15,6 +38,9 @@ def main():
         Student("SV002", "Tran Thi B", 21, "K20"),
         Student("SV003", "Le Van C", 19, "K21"),
     ]
+
+    # Gọi hàm add_student
+    students = add_student(students, "SV004", "Pham Thi D", 22, "K19")
 
     for student in students:
         print(f"  {student}")
