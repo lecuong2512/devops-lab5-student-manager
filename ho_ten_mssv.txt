@@ -1,0 +1,9 @@
+﻿THÔNG TIN THỰC HIỆN LAB 5 - DEVOPS
+Học phần: Vận hành và bảo trì phần mềm (DevOps)
+Dự án: devops-lab5-student-manager
+Repo GitHub: https://github.com/lecuong2512/devops-lab5-student-manager
+
+Danh sách thành viên nhóm:
+1. Lê Việt Cường (Nhóm trưởng / Dev A) - MSSV: DTC235200100 - GitHub: lecuong2512
+2. Bùi Tuấn (Dev B) - GitHub: tuanbui69
+3. Lê An (Dev C) - GitHub: lean1835
