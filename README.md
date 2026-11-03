@@ -1,3 +1,3 @@
 # Student Manager
 
-**Version 1.0.0** — Cập nhật bởi Dev B (tuanbui69)
+**Version 1.0.0** — Phát triển bởi lecuong2512, tuanbui69 & lean1835
