@@ -28,6 +28,26 @@ def add_student(students: list, student_id: str, name: str, age: int, grade: str
     return students
 
 
+def search_student(students: list, keyword: str) -> list:
+    """Tìm kiếm sinh viên theo từ khóa (tên hoặc mã sinh viên).
+
+    Args:
+        students: Danh sách sinh viên
+        keyword: Từ khóa tìm kiếm
+
+    Returns:
+        Danh sách sinh viên khớp với từ khóa
+    """
+    results = [s for s in students if keyword.lower() in s.name.lower() or keyword.lower() in s.student_id.lower()]
+    if results:
+        print(f"🔍 Tìm thấy {len(results)} sinh viên với từ khóa '{keyword}':")
+        for s in results:
+            print(f"  {s}")
+    else:
+        print(f"❌ Không tìm thấy sinh viên nào với từ khóa '{keyword}'")
+    return results
+
+
 def main():
     print("=" * 50)
     print("STUDENT MANAGER — DevOps Lab 5")
@@ -41,6 +61,9 @@ def main():
 
     # Gọi hàm add_student
     students = add_student(students, "SV004", "Pham Thi D", 22, "K19")
+
+    # Gọi hàm search_student
+    search_student(students, "Van")
 
     for student in students:
         print(f"  {student}")
