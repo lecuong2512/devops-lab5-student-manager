@@ -48,6 +48,24 @@ def search_student(students: list, keyword: str) -> list:
     return results
 
 
+def delete_student(students: list, student_id: str) -> list:
+    """Xóa sinh viên khỏi danh sách theo mã sinh viên.
+
+    Args:
+        students: Danh sách sinh viên
+        student_id: Mã sinh viên cần xóa
+
+    Returns:
+        Danh sách sinh viên sau khi xóa
+    """
+    updated = [s for s in students if s.student_id != student_id]
+    if len(updated) < len(students):
+        print(f"🗑️ Đã xóa sinh viên mã: {student_id}")
+    else:
+        print(f"❌ Không tìm thấy sinh viên {student_id} để xóa!")
+    return updated
+
+
 def main():
     print("=" * 50)
     print("STUDENT MANAGER — DevOps Lab 5")
@@ -64,6 +82,9 @@ def main():
 
     # Gọi hàm search_student
     search_student(students, "Van")
+
+    # Gọi hàm delete_student
+    students = delete_student(students, "SV001")
 
     for student in students:
         print(f"  {student}")
